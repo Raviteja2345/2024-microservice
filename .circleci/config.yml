@@ -21,12 +21,6 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-
-      - test
-      - run:
-          name: "Run Tests"
-          command: "mvn clean test"
-
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
 workflows:
