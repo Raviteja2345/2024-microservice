@@ -1,26 +1,17 @@
 version: 2.1
 
 jobs:
-  say-hello:
-
+  build:
     docker:
-      - image: cimg/base:current
-
+      - image: circleci/openjdk:11-jdk  # A Docker image with Java 11 installed
     steps:
       - checkout
       - run:
-        name: "Install Maven"
-        command: sudo apt-get install -y maven
-
+          name: Install Maven
+          command: sudo apt-get install -y maven  # This is optional if Maven is pre-installed in the image
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-
+          name: Verify Maven Installation
+          command: mvn -v
       - run:
-          name: "Run Tests"
-          command: mvn test
-
-workflows:
-  say-hello-workflow:
-    jobs:
-      - say-hello
+          name: Build with Maven
+          command: mvn clean install
