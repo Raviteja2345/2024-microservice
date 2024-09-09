@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:11-jdk  # Base image with JDK
+      - image: circleci/openjdk:17-jdk  # Base image with JDK
     steps:
       - checkout
       - run:
