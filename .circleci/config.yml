@@ -7,9 +7,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Update Package List
-          command: sudo apt-get update
-      - run:
           name: Install Maven
           command: sudo apt-get install -y maven
       - run:
