@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 @Component
 public class NameValidator {
@@ -19,13 +20,11 @@ public class NameValidator {
         String[] array = {"Hello","Mellow","Bellow"};
         List<Integer> integerList = Arrays.asList(1,1,2,3,4,5,2,3,4,5);
 
-
-        int index = 0;
-        for(int printItem : integerList){
-            if(index == 2){
-                System.out.println(printItem);
-            }
-            index++;
+        for(int i =0 ; i<integerList.size()-1;i++){
+           if(Objects.equals(integerList.get(i), integerList.get(i + 1))){
+               System.out.println(i);
+           }
+           i++;
         }
     }
 }
